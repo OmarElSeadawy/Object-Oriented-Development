@@ -30,7 +30,7 @@ class sortedarr
 
     public:
 
-    sortedarr(int s = 1):sz(s),arr(new uint32_t [sz]){ std::cout<<"Constructed Arr\n";}     //Int Constructor
+    sortedarr(int s = 1):sz(s),arr(new uint32_t [s]){ std::cout<<"Constructed Arr\n";}     //Int Constructor
     ~sortedarr(){ std::cout<<"Array Destruct\n"; if(arr) delete [] arr; else std::cout << "Array already deleted\n "; }            //Destructor
     sortedarr(const sortedarr& a):arr(a.arr),sz(a.sz)            //Copy Constructor
     {
@@ -94,9 +94,10 @@ class sortedarr
     {
         o << "Output Operator\n";
         a.bubbleSort();
+        o << "Size of Array is : " << a.sz << std::endl;
         for(int i=0; i<a.sz;i++)
         {
-            o << a.arr[i] << std::endl;
+            o << "Index : [" << i << "] Has value : " << a.arr[i] << std::endl;
         }
         return o;
     }    
